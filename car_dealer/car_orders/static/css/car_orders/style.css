@@ -1,0 +1,68 @@
+html {
+    background-image: url(../../images/car_orders/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 5rem 7rem;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.table {
+	width: 100%;
+	margin-bottom: 20px;
+	border: 1px solid;
+	border-collapse: collapse;
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	border: 1px solid #002A3A;
+    color: #fff;
+    background: #002A3A;
+    font-size:130%;
+}
+.table td {
+	border: 1px solid #9f9b9b;
+	padding: 5px;
+    background: #F6F5F4;
+    text-align: center;
+    font-size:110%;
+}
+
+ul.pagination {
+    display: inline-block;
+    padding: 5px;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+	background-color: #F6F5F4;
+    color: #002A3A;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #F6F5F4;
+}
+
+ul.pagination li a:hover:not(.active) {
+	background-color: #002A3A;
+	color: #fff;
+}
+
+nav.center {text-align: center;}
+
