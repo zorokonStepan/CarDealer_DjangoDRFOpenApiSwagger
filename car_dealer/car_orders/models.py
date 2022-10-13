@@ -48,8 +48,9 @@ class Order(models.Model):
     date = models.DateField(default=datetime.date.today, verbose_name='Дата составления заказа')
 
     def __str__(self):
-        return '|'.join((f'№{str(self.order_number)}',
+        return '-'.join((f'№{str(self.order_number)}',
                          self.car_model.__str__(),
+                         self.car_model.brand.__str__(),
                          self.color.__str__(),
                          str(self.count),
                          self.date.strftime('%d.%m.%Y')))

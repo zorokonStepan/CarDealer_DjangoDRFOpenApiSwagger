@@ -4,6 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="refresh">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title></title>
         <link rel="stylesheet" type="text/css" href="{% static 'css/car_orders/style.css' %}">
     </head>
@@ -33,32 +34,39 @@
                     {% endfor %}
                 </tbody>
             </table>
-            {% if page_obj.has_other_pages %}
-                <nav class="center">
-                    <ul class="pagination">
-                        {% if page_obj.has_previous %}
-                            <li>
-                                <a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
-                            </li>
-                        {% endif %}
-                        {% for p in paginator.page_range %}
-                            {% if page_obj.number == p %}
-
-                                <li>{{ p }}</li>
-                            {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2  %}
-                                <li>
-                                    <a href="?page={{ p }}">{{ p }}</a>
-                                </li>
-                            {% endif %}
-                        {% endfor %}
-                        {% if page_obj.has_next %}
-                            <li>
-                                <a href="?page={{ page_obj.next_page_number }}">Следующая</a>
-                            </li>
-                        {% endif %}
+            <div class="container">
+                <form action="{% url 'orders' %}" method="POST" class="order-form">
+                    {% csrf_token %}
+                    <ul class="custom">
+                        {{ form.as_ul }}
+                        <li><input type="submit" class="sub" value="Поиск с парамметрами"></li>
                     </ul>
-                </nav>
-            {% endif %}
+                    {% if page_obj.has_other_pages %}
+                    <nav class="pagination">
+                            <ul class="pagination">
+                                {% if page_obj.has_previous %}
+                                    <li><a href="?page=1">Начало</a></li>
+                                    <li><a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a></li>
+                                {% endif %}
+                                {% for p in paginator.page_range %}
+                                    {% if page_obj.number == p %}
+                                        <li><a class="active" href="?page={{ p }}">{{ p }}</a></li>
+                                    {% elif p >= page_obj.number|add:-3 and p <= page_obj.number|add:3  %}
+                                        <li><a href="?page={{ p }}">{{ p }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if page_obj.has_next %}
+                                    <li><a href="?page={{ page_obj.next_page_number }}">Следующая</a></li>
+                                    <li><a href="?page={{ paginator.num_pages }}">Конец</a></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    {% endif %}
+                    <div class="container">
+                        <li class="brand">{{ form_brands.brand }}</li>
+                    </div>
+                </form>
+            </div>
         </div>
     </body>
 </html>
