@@ -10,6 +10,14 @@
     </head>
     <body>
         <div>
+            <form action="{% url 'orders' %}" method="POST" class="order-form">
+                {% csrf_token %}
+                <div class="container">
+                    <ul class="custom">
+                        <li class="brand">{{ form_brands.brand }}</li>
+                    </ul>
+                </div>
+            </form>
             <table class="table">
                 <thead>
                     <tr>
@@ -62,9 +70,6 @@
                             </ul>
                         </nav>
                     {% endif %}
-                    <div class="container">
-                        <li class="brand">{{ form_brands.brand }}</li>
-                    </div>
                 </form>
             </div>
         </div>
