@@ -23,8 +23,8 @@ class CarModelAdmin(admin.ModelAdmin):
 
 class OrderAdmin(admin.ModelAdmin):
     list_display = ('order_number', 'color', 'car_model', 'count', 'date')
-    list_display_links = ('order_number', 'car_model',)
-    search_fields = ('order_number', 'car_model',)
+    list_display_links = ('order_number', 'car_model', 'date')
+    search_fields = ('order_number', 'color', 'car_model', 'count', 'date')
 
 
 admin.site.register(CarColor, CarColorAdmin)

@@ -6,7 +6,7 @@
         <meta http-equiv="refresh">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title></title>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/car_orders/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/orders/style.css' %}">
     </head>
     <body>
         <div>
@@ -17,40 +17,37 @@
                         <li class="brand">{{ form_brands.brand }}</li>
                     </ul>
                 </div>
-            </form>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Номер заказа</th>
-                        <th>Модель автомобиля</th>
-                        <th>Марка автомобиля</th>
-                        <th>Цвет автомобиля</th>
-                        <th>Количество</th>
-                        <th>Дата составления заказа</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for obj in page_obj %}
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td>{{ obj.order_number }}</td>
-                            <td>{{ obj.car_model }}</td>
-                            <td>{{ obj.car_model.brand }}</td>
-                            <td>{{ obj.color }}</td>
-                            <td>{{ obj.count }}</td>
-                            <td>{{ obj.date }}</td>
+                            <th>Номер заказа</th>
+                            <th>Модель автомобиля</th>
+                            <th>Марка автомобиля</th>
+                            <th>Цвет автомобиля</th>
+                            <th>Количество</th>
+                            <th>Дата составления заказа</th>
                         </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            <div class="container">
-                <form action="{% url 'orders' %}" method="POST" class="order-form">
-                    {% csrf_token %}
+                    </thead>
+                    <tbody>
+                        {% for obj in page_obj %}
+                            <tr>
+                                <td>{{ obj.order_number }}</td>
+                                <td>{{ obj.car_model }}</td>
+                                <td>{{ obj.car_model.brand }}</td>
+                                <td>{{ obj.color }}</td>
+                                <td>{{ obj.count }}</td>
+                                <td>{{ obj.date }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="container">
                     <ul class="custom">
                         {{ form.as_ul }}
                         <li><input type="submit" class="sub" value="Поиск с парамметрами"></li>
                     </ul>
                     {% if page_obj.has_other_pages %}
-                    <nav class="pagination">
+                        <nav class="pagination">
                             <ul class="pagination">
                                 {% if page_obj.has_previous %}
                                     <li><a href="?page=1">Начало</a></li>
@@ -68,10 +65,10 @@
                                     <li><a href="?page={{ paginator.num_pages }}">Конец</a></li>
                                 {% endif %}
                             </ul>
-                        </nav>
+                    </nav>
                     {% endif %}
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </body>
 </html>

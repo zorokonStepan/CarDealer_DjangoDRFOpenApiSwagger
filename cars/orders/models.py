@@ -4,7 +4,7 @@ from django.core.validators import MinValueValidator
 
 
 class CarColor(models.Model):
-    color = models.CharField(max_length=50, db_index=True, verbose_name='Цвет')
+    color = models.CharField(max_length=50, db_index=True, unique=True, verbose_name='Цвет')
 
     def __str__(self):
         return self.color
@@ -16,7 +16,7 @@ class CarColor(models.Model):
 
 
 class CarBrand(models.Model):
-    brand = models.CharField(max_length=25, db_index=True, verbose_name='Марка автомобиля')
+    brand = models.CharField(max_length=25, db_index=True, unique=True, verbose_name='Марка автомобиля')
 
     def __str__(self):
         return self.brand
@@ -28,7 +28,7 @@ class CarBrand(models.Model):
 
 
 class CarModel(models.Model):
-    car_model = models.CharField(max_length=25, db_index=True, verbose_name='Модель автомобиля')
+    car_model = models.CharField(max_length=25, db_index=True, unique=True, verbose_name='Модель автомобиля')
     brand = models.ForeignKey('CarBrand', on_delete=models.PROTECT, verbose_name='Марка автомобиля')
 
     def __str__(self):
