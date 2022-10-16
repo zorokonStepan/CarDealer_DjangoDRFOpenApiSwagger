@@ -71,3 +71,8 @@ title="api_delete">
 title="api_color_count">
 </p>
 
+2.2.2. Список марок с указанием количества заказанных авто каждой марки (атрибуты элементов: марка, количество)
+<p align="center">
+<img src="https://github.com/zorokonStepan/CarDealer_DjangoDRFOpenApiSwagger/raw/main/img_git/api/api_brand_count.png" width="450"
+title="api_brand_count">
+</p>
