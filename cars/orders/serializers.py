@@ -70,8 +70,8 @@ class OrderSerializer(serializers.ModelSerializer):
 class OrderGETSerializer(serializers.Serializer):
     date = serializers.DateField()
     color = serializers.CharField(max_length=50)
-    car_model = serializers.CharField(max_length=25)
     brand = serializers.CharField(max_length=25)
+    car_model = serializers.CharField(max_length=25)
     count = serializers.IntegerField()
 
 
