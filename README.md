@@ -62,3 +62,12 @@ title="api_delete">
 </p>
 
 С остальными моделями аналогично.
+
+2.2. Реализовать API для получения след. информации:
+
+2.2.1. Список цветов с указанием количества заказанных авто каждого цвета (атрибуты элементов: цвет, количество)
+<p align="center">
+<img src="https://github.com/zorokonStepan/CarDealer_DjangoDRFOpenApiSwagger/raw/main/img_git/api/api_color_count.png" width="450"
+title="api_color_count">
+</p>
+
