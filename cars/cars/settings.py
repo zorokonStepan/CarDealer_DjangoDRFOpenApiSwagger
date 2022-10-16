@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'orders.apps.OrdersConfig'
+    'orders.apps.OrdersConfig',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -147,4 +148,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-APPEND_SLASH = False
+APPEND_SLASH = True

@@ -45,7 +45,7 @@ class Order(models.Model):
     color = models.ForeignKey('CarColor', on_delete=models.RESTRICT, verbose_name='Цвет автомобиля')
     car_model = models.ForeignKey('CarModel', on_delete=models.RESTRICT, verbose_name='Модель автомобиля')
     count = models.IntegerField(db_index=True, validators=[MinValueValidator(1)], verbose_name='Количество')
-    date = models.DateField(default=datetime.date.today, verbose_name='Дата составления заказа')
+    date = models.DateField(default=datetime.date.today, verbose_name='Дата')
 
     def __str__(self):
         return '-'.join((f'№{str(self.order_number)}',

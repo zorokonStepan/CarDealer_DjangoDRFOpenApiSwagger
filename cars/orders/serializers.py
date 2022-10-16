@@ -1,24 +1,22 @@
+import datetime
 from rest_framework import serializers
 
 from .models import CarColor, CarBrand, CarModel, Order
 
 
 class CarColorSerializer(serializers.ModelSerializer):
-    """Serialization of data during CRUD operations with data from a database CarColor"""
     class Meta:
         model = CarColor
         fields = ('id', 'color')
 
 
 class CarBrandSerializer(serializers.ModelSerializer):
-    """Serialization of data during CRUD operations with data from a database CarBrand"""
     class Meta:
         model = CarBrand
         fields = ('id', 'brand')
 
 
 class CarModelSerializer(serializers.ModelSerializer):
-    """Serialization of data during CRUD operations with data from a database CarModel"""
     brand = serializers.CharField(max_length=25)
 
     class Meta:
@@ -40,7 +38,6 @@ class CarModelSerializer(serializers.ModelSerializer):
 
 
 class OrderSerializer(serializers.ModelSerializer):
-    """Serialization of data during CRUD operations with data from a database CarModel"""
     color = serializers.CharField(max_length=50)
     car_model = serializers.CharField(max_length=25)
 
@@ -50,6 +47,8 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         _ = validated_data.pop('brand', None)
+        if 'date' not in validated_data:
+            validated_data['date'] = datetime.date.today().strftime('%Y-%m-%d')
         validated_data['color'] = CarColor.objects.get(color=validated_data['color'])
         validated_data['car_model'] = CarModel.objects.get(car_model=validated_data['car_model'])
         return Order.objects.create(**validated_data)
@@ -69,7 +68,6 @@ class OrderSerializer(serializers.ModelSerializer):
 
 
 class OrderGETSerializer(serializers.Serializer):
-    """Serialization of data during CRUD operations with data from the database Order"""
     date = serializers.DateField()
     color = serializers.CharField(max_length=50)
     car_model = serializers.CharField(max_length=25)

@@ -8,28 +8,16 @@ from .serializers import CarColorSerializer, CarBrandSerializer, CarModelSeriali
 
 
 class CarColorViewSet(viewsets.ModelViewSet):
-    """
-    Implements API CRUD
-    To process a GET request with and without parameters, the method has been redefined list
-    """
     queryset = CarColor.objects.all()
     serializer_class = CarColorSerializer
 
 
 class CarBrandViewSet(viewsets.ModelViewSet):
-    """
-    Implements API CRUD
-    To process a GET request with and without parameters, the method has been redefined list
-    """
     queryset = CarBrand.objects.all()
     serializer_class = CarBrandSerializer
 
 
 class CarModelViewSet(viewsets.ModelViewSet):
-    """
-    Implements API CRUD
-    To process a GET request with and without parameters, the method has been redefined list
-    """
     queryset = CarModel.objects.all()
     serializer_class = CarModelSerializer
 
@@ -54,12 +42,10 @@ class CarModelViewSet(viewsets.ModelViewSet):
 
 
 class OrderViewSet(viewsets.ModelViewSet):
-    """Implements API CRUD To process a GET request with and without parameters, the method has been redefined list"""
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
     def list(self, request):
-        """To process a GET request with and without parameters"""
         queryset = Order.objects.all().values()
         for q in queryset:
             car_model = CarModel.objects.get(id=q['car_model_id'])
@@ -93,11 +79,9 @@ class OrderViewSet(viewsets.ModelViewSet):
 
 
 class OrderColorCountViewSet(viewsets.ModelViewSet):
-    """Implements API CRUD To process a GET request with and without parameters, the method has been redefined list"""
     queryset = Order.objects.all()
 
     def list(self, request):
-        """To process a GET request with and without parameters"""
         colors = CarColor.objects.all()
         queryset = []
         for color in colors:
@@ -113,11 +97,9 @@ class OrderColorCountViewSet(viewsets.ModelViewSet):
 
 
 class OrderBrandCountViewSet(viewsets.ModelViewSet):
-    """Implements API CRUD To process a GET request with and without parameters, the method has been redefined list"""
     queryset = Order.objects.all()
 
     def list(self, request):
-        """To process a GET request with and without parameters"""
         brands = CarBrand.objects.all()
 
         queryset = []
