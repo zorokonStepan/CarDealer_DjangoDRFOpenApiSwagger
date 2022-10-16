@@ -36,7 +36,7 @@ def view_orders(request):
 
     elif request.method == 'GET':
         context = {}
-
+        # create forms and get data from databases
         form = CheckBoxForm()
         if SORTED_COUNT:
             form.fields['sorted_count'].initial = True
@@ -52,12 +52,12 @@ def view_orders(request):
                 orders = Order.objects.filter(car_model__in=car_models)
         else:
             orders = Order.objects.all()
-
+        # pagination
         paginator = Paginator(orders, 10)
         page_number = request.GET.get('page')
         PAGE_NUMBER = page_number
         page_obj = paginator.get_page(page_number)
-
+        # create context
         context['form'] = form
         context['form_brands'] = form_brands
         context['page_obj'] = page_obj
