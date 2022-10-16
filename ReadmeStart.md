@@ -23,7 +23,7 @@
     <li><b>python manage.py runserver</b> - проверим все ли прошло успешно</li><br>
     <li><b>INSTALLED_APPS = […] строку 'rest_framework'</b> - регистрируем DRF</li><br>
     <li><b>INSTALLED_APPS = […] строку 'drf_yasg'</b> - регистрируем библиотеку для Swagger</li><br>
-    <li><b>Скопировать код с репозитория</b></li>
+    <li><b>Скопировать код с репозитория</b></li><br>
     <li><b>python manage.py makemigrations</b> - создать миграции для созданных таблиц</li><br>
     <li><b>python manage.py migrate</b> - выполнить миграции</li><br>
     <li><b>python manage.py createsuperuser</b> - теперь можно зайти в админку</li><br>
