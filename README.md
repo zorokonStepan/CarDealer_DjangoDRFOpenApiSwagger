@@ -79,11 +79,11 @@ title="api_brand_count">
 
 2.3. Обеспечить пользовательское представление API в формате OpenApi (Swagger).
 <p align="center">
-<img src="https://github.com/zorokonStepan/CarDealer_DjangoDRFOpenApiSwagger/raw/main/img_git/swagger_open_api/swagger1.png" width="450"
+<img src="https://github.com/zorokonStepan/CarDealer_DjangoDRFOpenApiSwagger/raw/main/img_git/swagger/swagger1.png" width="450"
 title="swagger open api">
 </p>
 
 <p align="center">
-<img src="https://github.com/zorokonStepan/CarDealer_DjangoDRFOpenApiSwagger/raw/main/img_git/swagger_open_api/swagger2.png" width="450"
+<img src="https://github.com/zorokonStepan/CarDealer_DjangoDRFOpenApiSwagger/raw/main/img_git/swagger/swagger2.png" width="450"
 title="swagger open api">
 </p>
