@@ -5,9 +5,9 @@ from .models import Order, CarModel, CarBrand
 from .forms import BrandsForm, CheckBoxForm
 
 
-SORTED_COUNT = None
-PAGE_NUMBER = None
-BRAND = None
+SORTED_COUNT = None  # to display a list of orders by quantity
+PAGE_NUMBER = None  # so that when choosing a list of orders to stay on the last page
+BRAND = None  # to display orders of certain car brands
 
 
 def index(request):
