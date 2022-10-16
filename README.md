@@ -37,16 +37,28 @@ title="brand sorted">
 
 2. С использованием библиотеки Django Rest Framework создано RestAPI для управления справочниками и заказами согласно ТЗ.<br>
 
-2.1. API для списка заказов возвращает элементы со след. атрибутами: дата заказа, цвет, марка авто, модель авто, количество
+2.1.1. API для списка заказов возвращает элементы со след. атрибутами: дата заказа, цвет, марка авто, модель авто, количество
 <p align="center">
 <img src="https://github.com/zorokonStepan/CarDealer_DjangoDRFOpenApiSwagger/raw/main/img_git/api/api_get.png" width="450"
 title="api_get">
 </p>
 
-2.2. В случае не передачи даты заказа в запросе заказ создается с текущей датой.
+2.1.2. В случае не передачи даты заказа в запросе заказ создается с текущей датой.
 <p align="center">
 <img src="https://github.com/zorokonStepan/CarDealer_DjangoDRFOpenApiSwagger/raw/main/img_git/api/api_post.png" width="450"
 title="api_post">
 </p>
 
+2.1.3. Пример обновления заказа.
+<p align="center">
+<img src="https://github.com/zorokonStepan/CarDealer_DjangoDRFOpenApiSwagger/raw/main/img_git/api/api_patch.png" width="450"
+title="api_patch">
+</p>
 
+2.1.4. Пример удаления заказа.
+<p align="center">
+<img src="https://github.com/zorokonStepan/CarDealer_DjangoDRFOpenApiSwagger/raw/main/img_git/api/api_delete.png" width="450"
+title="api_delete">
+</p>
+
+С остальными моделями аналогично.
