@@ -4,12 +4,12 @@
 <h1>Реализовано</h1>
 <br>
 Окружение.<br>
-1. Python > 3.10<br>
+1. Python == 3.9.7<br>
 2. Postgres == 14.5<br>
 3. Django == 4.1.2<br>
 4. djangorestframework==3.14.0<br>
 5. drf-yasg==1.21.4 - Swagger
-<br>
+<br><br>
 1. Созданы модели согласно ТЗ.<br>
 1.1. Реализована пагинация списка заказов (объем страницы 10 элементов)
 <p align="center">
