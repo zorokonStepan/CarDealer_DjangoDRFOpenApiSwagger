@@ -16,7 +16,11 @@
 <img src="https://github.com/zorokonStepan/CarDealer_DjangoDRFOpenApiSwagger/raw/main/img_git/pag1.png" width="450"
 title="pagination">
 </p>
-
+1.2. Реализована сортировка списка заказов по количеству.
+<p align="center">
+<img src="https://github.com/zorokonStepan/CarDealer_DjangoDRFOpenApiSwagger/raw/main/img_git/sort_cnt.png" width="450"
+title="count sorted">
+</p>
 
 2. С использованием библиотеки Django Rest Framework создано RestAPI для управления справочниками и заказами согласно ТЗ.<br>
 
