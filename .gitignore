@@ -1,6 +1,7 @@
 task.doxc
 links.txt
 old/
+*.docx
 
 migrations/
 
